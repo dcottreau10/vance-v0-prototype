@@ -47,7 +47,7 @@ export default function EmailAuthPage({ params }: EmailAuthPageProps) {
           />
           
           <p className="text-sm text-gray-600">
-            We'll send you a verification code
+            We&apos;ll send you a verification code
           </p>
         </div>
 

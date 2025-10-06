@@ -14,7 +14,7 @@ interface ApplicationPageProps {
 
 export default function ApplicationPage({ params }: ApplicationPageProps) {
   const router = useRouter()
-  const [progress, setProgress] = useState(60)
+  const [progress] = useState(60)
 
   const handleBack = () => {
     router.push(`/${params.state}/dashboard`)

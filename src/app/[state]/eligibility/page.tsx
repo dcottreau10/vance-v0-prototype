@@ -60,7 +60,7 @@ export default function EligibilityPage({ params }: EligibilityPageProps) {
             className="w-full"
             onClick={handleEligible}
           >
-            I'm Eligible
+            I&apos;m Eligible
           </Button>
           
           <Button 
@@ -69,7 +69,7 @@ export default function EligibilityPage({ params }: EligibilityPageProps) {
             className="w-full"
             onClick={handleNotEligible}
           >
-            I'm Not Eligible
+            I&apos;m Not Eligible
           </Button>
         </div>
       </main>

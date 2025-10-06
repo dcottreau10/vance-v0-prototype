@@ -41,7 +41,7 @@ export default function EligiblePage({ params }: EligiblePageProps) {
           </div>
           
           <h1 className="text-2xl font-bold text-black mb-4">
-            You're Eligible!
+            You&apos;re Eligible!
           </h1>
           
           <p className="text-gray-700 mb-8">
