@@ -1,184 +1,204 @@
-# CoverageCare Patient App - Prototype
+# CoverageCare Patient App Prototype
 
-This is a React/TypeScript/Tailwind prototype for the CoverageCare Patient App, demonstrating the complete user journey for Medicaid enrollment and coverage management.
+A comprehensive React/TypeScript prototype for the CoverageCare Patient App, built with Next.js, Tailwind CSS, and shadcn/ui design system.
 
-## Features Implemented
+## 🚀 Overview
 
-### 🏠 Landing Pages
-- **Multi-State Landing Page** (`/`) - Clinic branding with state selection (CA, NV, AZ)
-- **Single-State Landing Page** (`/[state]`) - State-specific landing with eligibility check and application start options
+This prototype demonstrates the complete user journey for a Medicaid application assistant app, featuring:
 
-### 🔍 Eligibility Flow
-- **Eligibility Questionnaire** (`/[state]/eligibility`) - Placeholder questionnaire
-- **Eligible Result Screen** (`/[state]/eligible`) - Success state with application start option
-- **Ineligible Result Screen** (`/[state]/ineligible`) - Alternative path with "apply anyway" option
+- **Multi-state support** (California, Nevada, Arizona)
+- **Authentication flows** (email, phone, social SSO)
+- **Eligibility screening** system
+- **Application management** dashboard
+- **Multi-language support** (7 languages including RTL)
+- **Mobile-first responsive design**
+- **Professional shadcn/ui styling**
 
-### 🔐 Authentication
-- **Authentication Screen** (`/[state]/auth`) - Multiple SSO options (Google, Apple, Facebook, X) plus email/phone
-- **Email Authentication** (`/[state]/auth/email`) - Email input with verification
-- **Email Verification** (`/[state]/auth/email/verify`) - 6-digit OTP input
-- **Phone Authentication** (`/[state]/auth/phone`) - Phone number input with country code
-- **Phone Verification** (`/[state]/auth/phone/verify`) - 6-digit SMS code input
-- **SSO Placeholder** (`/[state]/sso`) - Loading state for social login
+## 🎨 Design System
 
-### 📊 Dashboard States
-- **Initial State** - Check coverage and start application options
-- **Not Covered State** - Coverage status with last/next check times
-- **Application In Progress** - Progress bar with continue option
-- **Application Submitted** - Submitted status with new application option
-- **Covered State** - Success with aid code, plan, and provider details
+Built with a complete shadcn/ui design system featuring:
 
-### 👤 Profile & Application
-- **Profile Completion** (`/[state]/profile`) - Personal information form
-- **Application Flow** (`/[state]/application`) - Placeholder multi-step form
+- **Semantic color palette** with light/dark mode support
+- **Consistent typography** and spacing
+- **Professional shadows** and micro-interactions
+- **Touch-friendly** 48px minimum touch targets
+- **Accessible** focus states and keyboard navigation
 
-## Design System
+## 📱 Screens & User Journey
 
-### Colors
-- **Primary**: Black (#000000)
-- **Secondary**: White (#ffffff)
-- **Grays**: 50%, 75% grey for hierarchy
-- **Status Colors**: Green (success), Red (error), Yellow (warning), Blue (info)
+### 1. **State Selection**
+- Multi-state landing page
+- Single-state focused landing
 
-### Components
-- Clean, modern design inspired by shadcn/ui
-- Mobile-first responsive design
-- 48px minimum touch targets
-- Consistent spacing (8px, 16px, 24px, 32px scale)
+### 2. **Authentication**
+- Email/Phone authentication
+- Social SSO (Google, Apple, Facebook, X)
+- OTP verification flows
 
-### Typography
-- Clean, readable fonts with clear hierarchy
-- Sixth-grade reading level for accessibility
-- Support for multiple languages and RTL
+### 3. **Eligibility & Application**
+- Quick eligibility screening
+- Full application process
+- Document upload and management
 
-## Getting Started
+### 4. **Dashboard States**
+- Initial state
+- Not covered
+- In progress
+- Submitted
+- Covered
+
+### 5. **Profile Management**
+- Personal information
+- Contact details
+- Application status
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Icons**: Lucide React
+- **State Management**: React hooks
+- **Routing**: Next.js dynamic routes
+
+## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+ 
 - npm or yarn
 
 ### Installation
 
-1. Navigate to the prototype directory:
 ```bash
-cd /Users/denniscottreau/AI-PM/projects/vance/prototype
-```
+# Clone the repository
+git clone https://github.com/dcottreau10/vance-v0-prototype.git
+cd vance-v0-prototype
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Start the development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+### Quick Start Script
 
-## User Journey Demo
+```bash
+# Make the start script executable
+chmod +x start.sh
 
-### Complete Flow
-1. **Start**: Visit `/` (multi-state landing)
-2. **Select State**: Click "California" → `/ca`
-3. **Check Eligibility**: Click "Check Eligibility" → `/ca/eligibility`
-4. **Get Result**: Click "I'm Eligible" → `/ca/eligible`
-5. **Start Application**: Click "Start Application" → `/ca/auth`
-6. **Authenticate**: Choose email → `/ca/auth/email`
-7. **Enter Email**: Enter email → `/ca/auth/email/verify`
-8. **Verify Code**: Enter 6-digit code → `/ca/dashboard`
-9. **Complete Profile**: Click "Complete Profile" → `/ca/profile`
-10. **Save Profile**: Fill form and save → `/ca/dashboard`
-11. **Start Application**: Click "Start Application" → `/ca/application`
-12. **Complete Application**: Click "Mark as Complete" → `/ca/dashboard`
+# Run the quick start script
+./start.sh
+```
 
-### Dashboard States
-Use the demo controls on the dashboard to switch between different states:
-- **Initial**: New user experience
-- **Not Covered**: Profile completed, no coverage
-- **In Progress**: Application started but not finished
-- **Submitted**: Application submitted, processing
-- **Covered**: Successfully enrolled with coverage details
+The app will be available at `http://localhost:3000`
 
-## Technical Stack
-
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Components**: Custom components inspired by shadcn/ui
-- **Icons**: Lucide React
-- **State Management**: React hooks (useState, useRouter)
-
-## File Structure
+## 📁 Project Structure
 
 ```
 src/
-├── app/
-│   ├── [state]/
-│   │   ├── auth/
-│   │   │   ├── email/
-│   │   │   └── phone/
-│   │   ├── dashboard/
-│   │   ├── eligibility/
-│   │   ├── profile/
-│   │   └── application/
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
+├── app/                    # Next.js App Router pages
+│   ├── [state]/           # Dynamic state routes
+│   │   ├── auth/          # Authentication flows
+│   │   ├── dashboard/     # Main dashboard
+│   │   ├── eligibility/   # Eligibility screening
+│   │   └── profile/       # Profile management
+│   ├── globals.css        # Global styles + design tokens
+│   └── layout.tsx         # Root layout
 ├── components/
-│   ├── ui/
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   └── input.tsx
-│   └── layout/
-│       ├── header.tsx
-│       └── footer.tsx
+│   ├── layout/            # Header, Footer components
+│   └── ui/                # shadcn/ui components
 └── lib/
-    └── utils.ts
+    └── utils.ts           # Utility functions
 ```
 
-## Prototype Notes
+## 🎯 Key Features
 
-### What's Included
-- ✅ Complete user journey flow
-- ✅ All 17 screens from design brief
-- ✅ Mobile-first responsive design
-- ✅ Interactive navigation
-- ✅ Form interactions and validation
-- ✅ Dashboard state management
-- ✅ Language selector (UI only)
-- ✅ Clinic branding integration
+### Multi-Tenant Architecture
+- Supports different clinic brandings
+- State-specific rules and workflows
+- Configurable clinic information
 
-### What's Not Included (By Design)
-- ❌ Real authentication or data storage
-- ❌ Actual API integrations
-- ❌ HIPAA compliance implementation
-- ❌ Production-level security
-- ❌ Real form validation or error handling
-- ❌ Multi-language content (UI only)
+### Authentication System
+- **Email/Phone OTP**: Secure verification flows
+- **Social SSO**: Google, Apple, Facebook, X integration
+- **Session Management**: Secure token handling
 
-## Browser Support
+### Eligibility Screening
+- Quick 5-question screening
+- State-specific eligibility rules
+- Immediate feedback and next steps
 
-- Chrome/Edge (recommended)
-- Firefox
-- Safari
-- Mobile browsers (iOS Safari, Chrome Mobile)
+### Application Management
+- **Multi-step forms**: Guided application process
+- **Document upload**: Secure file handling
+- **Progress tracking**: Real-time status updates
+- **Save & resume**: Continue applications later
 
-## Performance
+### Dashboard States
+- **Initial**: Welcome and setup
+- **Not Covered**: Eligibility guidance
+- **In Progress**: Application tracking
+- **Submitted**: Review and next steps
+- **Covered**: Coverage management
 
-- Optimized for 3G connections
-- Mobile-first responsive design
-- Minimal bundle size
-- Fast loading times
+## 🌍 Internationalization
 
-## Accessibility
+Supports 7 languages with RTL support:
 
-- WCAG 2.1 AA compliant design
-- Keyboard navigation support
-- High contrast themes
-- Semantic HTML structure
-- Screen reader friendly
+- English
+- Español (Spanish)
+- 中文 (Chinese)
+- العربية (Arabic) - RTL
+- Français (French)
+- 한국어 (Korean)
+- Português (Portuguese)
+
+## 📱 Responsive Design
+
+- **Mobile-first**: Optimized for mobile devices
+- **Touch-friendly**: 48px minimum touch targets
+- **Adaptive layouts**: Works on all screen sizes
+- **Progressive enhancement**: Enhanced on larger screens
+
+## 🎨 Design Tokens
+
+Complete design system with:
+
+- **Colors**: Semantic color palette with light/dark variants
+- **Typography**: Consistent font scales and weights
+- **Spacing**: 8px grid system
+- **Shadows**: Subtle depth and hierarchy
+- **Border Radius**: Consistent rounded corners
+- **Animations**: Smooth transitions and micro-interactions
+
+## 🔧 Development
+
+### Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
+
+### Code Style
+
+- **TypeScript**: Strict type checking
+- **ESLint**: Code quality and consistency
+- **Prettier**: Code formatting
+- **Conventional Commits**: Standardized commit messages
+
+## 📄 License
+
+This project is part of the CoverageCare Patient App development for PointCare, LLC.
+
+## 🤝 Contributing
+
+This is a prototype for demonstration purposes. For production development, please refer to the main CoverageCare project documentation.
 
 ---
 
-**Note**: This is a prototype for demonstration purposes only. It does not include real functionality, data storage, or HIPAA compliance features required for production use.
+**Built with ❤️ for better healthcare access**
